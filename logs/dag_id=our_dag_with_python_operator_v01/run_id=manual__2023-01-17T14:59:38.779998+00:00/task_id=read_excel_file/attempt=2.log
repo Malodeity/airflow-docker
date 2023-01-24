@@ -1,0 +1,56 @@
+[2023-01-17T15:02:56.510+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: our_dag_with_python_operator_v01.read_excel_file manual__2023-01-17T14:59:38.779998+00:00 [queued]>
+[2023-01-17T15:02:56.519+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: our_dag_with_python_operator_v01.read_excel_file manual__2023-01-17T14:59:38.779998+00:00 [queued]>
+[2023-01-17T15:02:56.520+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-17T15:02:56.521+0000] {taskinstance.py:1284} INFO - Starting attempt 2 of 7
+[2023-01-17T15:02:56.521+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-17T15:02:56.533+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): read_excel_file> on 2023-01-17 14:59:38.779998+00:00
+[2023-01-17T15:02:56.539+0000] {standard_task_runner.py:55} INFO - Started process 7952 to run task
+[2023-01-17T15:02:56.543+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'our_dag_with_python_operator_v01', 'read_excel_file', 'manual__2023-01-17T14:59:38.779998+00:00', '--job-id', '1660', '--raw', '--subdir', 'DAGS_FOLDER/create_dag_with_operator.py', '--cfg-path', '/tmp/tmp7kzqcbui']
+[2023-01-17T15:02:56.545+0000] {standard_task_runner.py:83} INFO - Job 1660: Subtask read_excel_file
+[2023-01-17T15:02:56.605+0000] {task_command.py:389} INFO - Running <TaskInstance: our_dag_with_python_operator_v01.read_excel_file manual__2023-01-17T14:59:38.779998+00:00 [running]> on host 76023b3f850c
+[2023-01-17T15:02:56.659+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=malo
+AIRFLOW_CTX_DAG_ID=our_dag_with_python_operator_v01
+AIRFLOW_CTX_TASK_ID=read_excel_file
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-17T14:59:38.779998+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-17T14:59:38.779998+00:00
+[2023-01-17T15:02:56.660+0000] {logging_mixin.py:137} INFO - Begin Projedct
+[2023-01-17T15:03:11.662+0000] {local_task_job.py:224} WARNING - State of this instance has been externally set to restarting. Terminating instance.
+[2023-01-17T15:03:11.669+0000] {process_utils.py:133} INFO - Sending Signals.SIGTERM to group 7952. PIDs of all processes in the group: [7952]
+[2023-01-17T15:03:11.670+0000] {process_utils.py:84} INFO - Sending the signal Signals.SIGTERM to group 7952
+[2023-01-17T15:03:11.672+0000] {taskinstance.py:1483} ERROR - Received SIGTERM. Terminating subprocesses.
+[2023-01-17T15:03:11.691+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/create_dag_with_operator.py", line 22, in read_exel
+    '/opt/airflow/data/organizations-500000.xlsx')
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/excel/_base.py", line 395, in read_excel
+    mangle_dupe_cols=mangle_dupe_cols,
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/excel/_base.py", line 1292, in parse
+    **kwds,
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/excel/_base.py", line 539, in parse
+    data = self.get_sheet_data(sheet, convert_float)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/excel/_openpyxl.py", line 572, in get_sheet_data
+    for row_number, row in enumerate(sheet.rows):
+  File "/home/airflow/.local/lib/python3.7/site-packages/openpyxl/worksheet/_read_only.py", line 79, in _cells_by_row
+    for idx, row in parser.parse():
+  File "/home/airflow/.local/lib/python3.7/site-packages/openpyxl/worksheet/_reader.py", line 155, in parse
+    row = self.parse_row(element)
+  File "/home/airflow/.local/lib/python3.7/site-packages/openpyxl/worksheet/_reader.py", line 281, in parse_row
+    keys = {k for k in attrs if not k.startswith('{')}
+  File "/home/airflow/.local/lib/python3.7/site-packages/openpyxl/worksheet/_reader.py", line 281, in <setcomp>
+    keys = {k for k in attrs if not k.startswith('{')}
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1485, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2023-01-17T15:03:11.701+0000] {taskinstance.py:1327} INFO - Marking task as UP_FOR_RETRY. dag_id=our_dag_with_python_operator_v01, task_id=read_excel_file, execution_date=20230117T145938, start_date=20230117T150256, end_date=20230117T150311
+[2023-01-17T15:03:11.719+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 1660 for task read_excel_file (Task received SIGTERM signal; 7952)
+[2023-01-17T15:03:11.847+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=7952, status='terminated', exitcode=1, started='15:02:55') (7952) terminated with exit code 1

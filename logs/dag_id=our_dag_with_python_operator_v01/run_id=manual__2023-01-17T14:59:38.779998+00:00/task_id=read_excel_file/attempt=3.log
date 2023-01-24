@@ -1,0 +1,40 @@
+[2023-01-17T15:08:12.701+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: our_dag_with_python_operator_v01.read_excel_file manual__2023-01-17T14:59:38.779998+00:00 [queued]>
+[2023-01-17T15:08:12.710+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: our_dag_with_python_operator_v01.read_excel_file manual__2023-01-17T14:59:38.779998+00:00 [queued]>
+[2023-01-17T15:08:12.711+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-17T15:08:12.712+0000] {taskinstance.py:1284} INFO - Starting attempt 3 of 7
+[2023-01-17T15:08:12.713+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-17T15:08:12.724+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): read_excel_file> on 2023-01-17 14:59:38.779998+00:00
+[2023-01-17T15:08:12.729+0000] {standard_task_runner.py:55} INFO - Started process 8306 to run task
+[2023-01-17T15:08:12.734+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'our_dag_with_python_operator_v01', 'read_excel_file', 'manual__2023-01-17T14:59:38.779998+00:00', '--job-id', '1662', '--raw', '--subdir', 'DAGS_FOLDER/create_dag_with_operator.py', '--cfg-path', '/tmp/tmpf5jleg85']
+[2023-01-17T15:08:12.736+0000] {standard_task_runner.py:83} INFO - Job 1662: Subtask read_excel_file
+[2023-01-17T15:08:12.799+0000] {task_command.py:389} INFO - Running <TaskInstance: our_dag_with_python_operator_v01.read_excel_file manual__2023-01-17T14:59:38.779998+00:00 [running]> on host 76023b3f850c
+[2023-01-17T15:08:12.856+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=malo
+AIRFLOW_CTX_DAG_ID=our_dag_with_python_operator_v01
+AIRFLOW_CTX_TASK_ID=read_excel_file
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-17T14:59:38.779998+00:00
+AIRFLOW_CTX_TRY_NUMBER=3
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-17T14:59:38.779998+00:00
+[2023-01-17T15:08:12.858+0000] {logging_mixin.py:137} INFO - Begin Projedct
+[2023-01-17T15:08:51.684+0000] {logging_mixin.py:137} INFO -          Index  ... Number of employees
+0            1  ...                2042
+1            2  ...                6858
+2            3  ...                3843
+3            4  ...                1092
+4            5  ...                2266
+...        ...  ...                 ...
+499995  499996  ...                5833
+499996  499997  ...                7176
+499997  499998  ...                2729
+499998  499999  ...                9850
+499999  500000  ...                2808
+
+[500000 rows x 9 columns]
+[2023-01-17T15:08:51.695+0000] {logging_mixin.py:137} INFO - connected
+[2023-01-17T15:09:06.684+0000] {logging_mixin.py:137} INFO - inserted to database
+[2023-01-17T15:09:06.795+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-01-17T15:09:06.815+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=our_dag_with_python_operator_v01, task_id=read_excel_file, execution_date=20230117T145938, start_date=20230117T150812, end_date=20230117T150906
+[2023-01-17T15:09:06.970+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2023-01-17T15:09:06.997+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

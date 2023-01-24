@@ -1,0 +1,43 @@
+[2023-01-16T11:17:13.791+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: our_dag_with_python_operator_v01.great manual__2023-01-16T11:12:10.775173+00:00 [queued]>
+[2023-01-16T11:17:13.798+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: our_dag_with_python_operator_v01.great manual__2023-01-16T11:12:10.775173+00:00 [queued]>
+[2023-01-16T11:17:13.798+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-16T11:17:13.799+0000] {taskinstance.py:1284} INFO - Starting attempt 2 of 6
+[2023-01-16T11:17:13.800+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-16T11:17:13.809+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): great> on 2023-01-16 11:12:10.775173+00:00
+[2023-01-16T11:17:13.815+0000] {standard_task_runner.py:55} INFO - Started process 1112 to run task
+[2023-01-16T11:17:13.819+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'our_dag_with_python_operator_v01', 'great', 'manual__2023-01-16T11:12:10.775173+00:00', '--job-id', '1628', '--raw', '--subdir', 'DAGS_FOLDER/create_dag_with_operator.py', '--cfg-path', '/tmp/tmpodgrtv6r']
+[2023-01-16T11:17:13.821+0000] {standard_task_runner.py:83} INFO - Job 1628: Subtask great
+[2023-01-16T11:17:13.879+0000] {task_command.py:389} INFO - Running <TaskInstance: our_dag_with_python_operator_v01.great manual__2023-01-16T11:12:10.775173+00:00 [running]> on host 25e249c46b4c
+[2023-01-16T11:17:13.934+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=malo
+AIRFLOW_CTX_DAG_ID=our_dag_with_python_operator_v01
+AIRFLOW_CTX_TASK_ID=great
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-16T11:12:10.775173+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-16T11:12:10.775173+00:00
+[2023-01-16T11:17:13.935+0000] {logging_mixin.py:137} INFO - Begin Projedct
+[2023-01-16T11:17:13.940+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/create_dag_with_operator.py", line 18, in read_exel
+    '/opt/airflow/data/organizations-500000.xlsx')
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/excel/_base.py", line 364, in read_excel
+    io = ExcelFile(io, storage_options=storage_options, engine=engine)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/excel/_base.py", line 1233, in __init__
+    self._reader = self._engines[engine](self._io, storage_options=storage_options)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/excel/_openpyxl.py", line 521, in __init__
+    import_optional_dependency("openpyxl")
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/compat/_optional.py", line 118, in import_optional_dependency
+    raise ImportError(msg) from None
+ImportError: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+[2023-01-16T11:17:13.950+0000] {taskinstance.py:1327} INFO - Marking task as UP_FOR_RETRY. dag_id=our_dag_with_python_operator_v01, task_id=great, execution_date=20230116T111210, start_date=20230116T111713, end_date=20230116T111713
+[2023-01-16T11:17:13.959+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 1628 for task great (Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.; 1112)
+[2023-01-16T11:17:13.992+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2023-01-16T11:17:14.008+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

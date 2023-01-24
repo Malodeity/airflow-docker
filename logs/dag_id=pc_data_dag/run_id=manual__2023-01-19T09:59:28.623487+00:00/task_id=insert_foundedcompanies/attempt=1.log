@@ -1,0 +1,28 @@
+[2023-01-19T09:59:30.540+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: pc_data_dag.insert_foundedcompanies manual__2023-01-19T09:59:28.623487+00:00 [queued]>
+[2023-01-19T09:59:30.581+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: pc_data_dag.insert_foundedcompanies manual__2023-01-19T09:59:28.623487+00:00 [queued]>
+[2023-01-19T09:59:30.583+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-19T09:59:30.584+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 6
+[2023-01-19T09:59:30.585+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-19T09:59:30.608+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): insert_foundedcompanies> on 2023-01-19 09:59:28.623487+00:00
+[2023-01-19T09:59:30.622+0000] {standard_task_runner.py:55} INFO - Started process 2450 to run task
+[2023-01-19T09:59:30.639+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'pc_data_dag', 'insert_foundedcompanies', 'manual__2023-01-19T09:59:28.623487+00:00', '--job-id', '1827', '--raw', '--subdir', 'DAGS_FOLDER/create_dag_with_operator.py', '--cfg-path', '/tmp/tmpzssrhf66']
+[2023-01-19T09:59:30.644+0000] {standard_task_runner.py:83} INFO - Job 1827: Subtask insert_foundedcompanies
+[2023-01-19T09:59:30.799+0000] {task_command.py:389} INFO - Running <TaskInstance: pc_data_dag.insert_foundedcompanies manual__2023-01-19T09:59:28.623487+00:00 [running]> on host 742349a45a57
+[2023-01-19T09:59:31.005+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=malo
+AIRFLOW_CTX_DAG_ID=pc_data_dag
+AIRFLOW_CTX_TASK_ID=insert_foundedcompanies
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-19T09:59:28.623487+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-19T09:59:28.623487+00:00
+[2023-01-19T09:59:31.052+0000] {logging_mixin.py:137} INFO - connected
+[2023-01-19T09:59:31.071+0000] {logging_mixin.py:137} INFO - Empty DataFrame
+Columns: [founded, totalcompanies]
+Index: []
+[2023-01-19T09:59:31.151+0000] {logging_mixin.py:137} INFO - inserted to database
+[2023-01-19T09:59:31.152+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-01-19T09:59:31.178+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=pc_data_dag, task_id=insert_foundedcompanies, execution_date=20230119T095928, start_date=20230119T095930, end_date=20230119T095931
+[2023-01-19T09:59:31.246+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2023-01-19T09:59:31.279+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

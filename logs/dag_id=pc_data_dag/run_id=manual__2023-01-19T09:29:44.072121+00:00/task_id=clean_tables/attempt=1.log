@@ -1,0 +1,25 @@
+[2023-01-19T09:29:46.061+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: pc_data_dag.clean_tables manual__2023-01-19T09:29:44.072121+00:00 [queued]>
+[2023-01-19T09:29:46.070+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: pc_data_dag.clean_tables manual__2023-01-19T09:29:44.072121+00:00 [queued]>
+[2023-01-19T09:29:46.070+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-19T09:29:46.072+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 6
+[2023-01-19T09:29:46.073+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-19T09:29:46.083+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): clean_tables> on 2023-01-19 09:29:44.072121+00:00
+[2023-01-19T09:29:46.090+0000] {standard_task_runner.py:55} INFO - Started process 301 to run task
+[2023-01-19T09:29:46.095+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'pc_data_dag', 'clean_tables', 'manual__2023-01-19T09:29:44.072121+00:00', '--job-id', '1767', '--raw', '--subdir', 'DAGS_FOLDER/create_dag_with_operator.py', '--cfg-path', '/tmp/tmpnfqusd28']
+[2023-01-19T09:29:46.098+0000] {standard_task_runner.py:83} INFO - Job 1767: Subtask clean_tables
+[2023-01-19T09:29:46.176+0000] {task_command.py:389} INFO - Running <TaskInstance: pc_data_dag.clean_tables manual__2023-01-19T09:29:44.072121+00:00 [running]> on host 742349a45a57
+[2023-01-19T09:29:46.242+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=malo
+AIRFLOW_CTX_DAG_ID=pc_data_dag
+AIRFLOW_CTX_TASK_ID=clean_tables
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-19T09:29:44.072121+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-19T09:29:44.072121+00:00
+[2023-01-19T09:30:01.384+0000] {logging_mixin.py:137} INFO - connected
+[2023-01-19T09:30:01.491+0000] {logging_mixin.py:137} INFO - Did not connect
+[2023-01-19T09:30:01.492+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-01-19T09:30:01.507+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=pc_data_dag, task_id=clean_tables, execution_date=20230119T092944, start_date=20230119T092946, end_date=20230119T093001
+[2023-01-19T09:30:01.573+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2023-01-19T09:30:01.601+0000] {taskinstance.py:2582} INFO - 1 downstream tasks scheduled from follow-on schedule check

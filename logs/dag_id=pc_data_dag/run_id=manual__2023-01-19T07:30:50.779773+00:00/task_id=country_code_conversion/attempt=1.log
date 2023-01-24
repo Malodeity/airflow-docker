@@ -1,0 +1,36 @@
+[2023-01-19T07:31:45.918+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: pc_data_dag.country_code_conversion manual__2023-01-19T07:30:50.779773+00:00 [queued]>
+[2023-01-19T07:31:45.946+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: pc_data_dag.country_code_conversion manual__2023-01-19T07:30:50.779773+00:00 [queued]>
+[2023-01-19T07:31:45.946+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-19T07:31:45.947+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 6
+[2023-01-19T07:31:45.948+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-19T07:31:45.960+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): country_code_conversion> on 2023-01-19 07:30:50.779773+00:00
+[2023-01-19T07:31:45.987+0000] {standard_task_runner.py:55} INFO - Started process 1335 to run task
+[2023-01-19T07:31:46.013+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'pc_data_dag', 'country_code_conversion', 'manual__2023-01-19T07:30:50.779773+00:00', '--job-id', '1757', '--raw', '--subdir', 'DAGS_FOLDER/create_dag_with_operator.py', '--cfg-path', '/tmp/tmpry1pqdno']
+[2023-01-19T07:31:46.026+0000] {standard_task_runner.py:83} INFO - Job 1757: Subtask country_code_conversion
+[2023-01-19T07:31:46.292+0000] {task_command.py:389} INFO - Running <TaskInstance: pc_data_dag.country_code_conversion manual__2023-01-19T07:30:50.779773+00:00 [running]> on host 2bdaab779455
+[2023-01-19T07:31:46.559+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=malo
+AIRFLOW_CTX_DAG_ID=pc_data_dag
+AIRFLOW_CTX_TASK_ID=country_code_conversion
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-19T07:30:50.779773+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-19T07:30:50.779773+00:00
+[2023-01-19T07:31:46.582+0000] {logging_mixin.py:137} INFO - connected
+[2023-01-19T07:31:47.602+0000] {logging_mixin.py:137} INFO - 0          Brennan, Keller and Munoz
+1                        Santana LLC
+2                          Gates Inc
+3                      Cooke-Everett
+4         Blackburn, Hale and Harmon
+                     ...            
+499995                   Sparks-Horn
+499996      Wong, Rogers and Swanson
+499997                  Hooper Group
+499998                 Sanford-Frost
+499999                    Tanner LLC
+Name: name, Length: 500000, dtype: object
+[2023-01-19T07:31:47.619+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-01-19T07:31:47.629+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=pc_data_dag, task_id=country_code_conversion, execution_date=20230119T073050, start_date=20230119T073145, end_date=20230119T073147
+[2023-01-19T07:31:47.696+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2023-01-19T07:31:47.713+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

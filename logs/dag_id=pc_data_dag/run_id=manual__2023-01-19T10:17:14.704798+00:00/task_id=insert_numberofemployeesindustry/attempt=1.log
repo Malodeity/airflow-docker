@@ -1,0 +1,39 @@
+[2023-01-19T10:18:27.033+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: pc_data_dag.insert_numberofemployeesindustry manual__2023-01-19T10:17:14.704798+00:00 [queued]>
+[2023-01-19T10:18:27.042+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: pc_data_dag.insert_numberofemployeesindustry manual__2023-01-19T10:17:14.704798+00:00 [queued]>
+[2023-01-19T10:18:27.042+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-19T10:18:27.043+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 6
+[2023-01-19T10:18:27.043+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-19T10:18:27.054+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): insert_numberofemployeesindustry> on 2023-01-19 10:17:14.704798+00:00
+[2023-01-19T10:18:27.061+0000] {standard_task_runner.py:55} INFO - Started process 3708 to run task
+[2023-01-19T10:18:27.068+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'pc_data_dag', 'insert_numberofemployeesindustry', 'manual__2023-01-19T10:17:14.704798+00:00', '--job-id', '1842', '--raw', '--subdir', 'DAGS_FOLDER/create_dag_with_operator.py', '--cfg-path', '/tmp/tmpacr8nhq_']
+[2023-01-19T10:18:27.070+0000] {standard_task_runner.py:83} INFO - Job 1842: Subtask insert_numberofemployeesindustry
+[2023-01-19T10:18:27.139+0000] {task_command.py:389} INFO - Running <TaskInstance: pc_data_dag.insert_numberofemployeesindustry manual__2023-01-19T10:17:14.704798+00:00 [running]> on host 742349a45a57
+[2023-01-19T10:18:27.205+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=malo
+AIRFLOW_CTX_DAG_ID=pc_data_dag
+AIRFLOW_CTX_TASK_ID=insert_numberofemployeesindustry
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-19T10:17:14.704798+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-19T10:17:14.704798+00:00
+[2023-01-19T10:18:27.222+0000] {logging_mixin.py:137} INFO - connected
+[2023-01-19T10:18:28.047+0000] {logging_mixin.py:137} INFO -            country                        industry  totalemployees
+0      Afghanistan                      Accounting         85694.0
+1      Afghanistan             Airlines / Aviation         69963.0
+2      Afghanistan  Alternative Dispute Resolution         95411.0
+3      Afghanistan            Alternative Medicine         60776.0
+4      Afghanistan                       Animation        102172.0
+...            ...                             ...             ...
+35716     Zimbabwe                     Warehousing         82957.0
+35717     Zimbabwe                       Wholesale         77179.0
+35718     Zimbabwe                  Wine / Spirits         47754.0
+35719     Zimbabwe                        Wireless        105176.0
+35720     Zimbabwe               Writing / Editing         56938.0
+
+[35721 rows x 3 columns]
+[2023-01-19T10:18:28.547+0000] {logging_mixin.py:137} INFO - inserted to database
+[2023-01-19T10:18:28.550+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-01-19T10:18:28.561+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=pc_data_dag, task_id=insert_numberofemployeesindustry, execution_date=20230119T101714, start_date=20230119T101827, end_date=20230119T101828
+[2023-01-19T10:18:28.622+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2023-01-19T10:18:28.639+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

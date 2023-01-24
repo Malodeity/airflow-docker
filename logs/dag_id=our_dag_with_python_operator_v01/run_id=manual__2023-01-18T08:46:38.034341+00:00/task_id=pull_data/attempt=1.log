@@ -1,0 +1,27 @@
+[2023-01-18T08:47:40.000+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: our_dag_with_python_operator_v01.pull_data manual__2023-01-18T08:46:38.034341+00:00 [queued]>
+[2023-01-18T08:47:40.007+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: our_dag_with_python_operator_v01.pull_data manual__2023-01-18T08:46:38.034341+00:00 [queued]>
+[2023-01-18T08:47:40.008+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-18T08:47:40.008+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 6
+[2023-01-18T08:47:40.009+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-18T08:47:40.019+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): pull_data> on 2023-01-18 08:46:38.034341+00:00
+[2023-01-18T08:47:40.024+0000] {standard_task_runner.py:55} INFO - Started process 1033 to run task
+[2023-01-18T08:47:40.029+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'our_dag_with_python_operator_v01', 'pull_data', 'manual__2023-01-18T08:46:38.034341+00:00', '--job-id', '1681', '--raw', '--subdir', 'DAGS_FOLDER/create_dag_with_operator.py', '--cfg-path', '/tmp/tmpbcfv8v54']
+[2023-01-18T08:47:40.032+0000] {standard_task_runner.py:83} INFO - Job 1681: Subtask pull_data
+[2023-01-18T08:47:40.093+0000] {task_command.py:389} INFO - Running <TaskInstance: our_dag_with_python_operator_v01.pull_data manual__2023-01-18T08:46:38.034341+00:00 [running]> on host 7af0b5bef0dd
+[2023-01-18T08:47:40.155+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=malo
+AIRFLOW_CTX_DAG_ID=our_dag_with_python_operator_v01
+AIRFLOW_CTX_TASK_ID=pull_data
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-18T08:46:38.034341+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-18T08:46:38.034341+00:00
+[2023-01-18T08:47:40.157+0000] {sql.py:253} INFO - Executing: select * from companies;
+[2023-01-18T08:47:40.166+0000] {base.py:73} INFO - Using connection ID 'posgres' for task execution.
+[2023-01-18T08:47:40.319+0000] {base.py:73} INFO - Using connection ID 'posgres' for task execution.
+[2023-01-18T08:47:40.325+0000] {sql.py:364} INFO - Running statement: select * from companies;, parameters: None
+[2023-01-18T08:47:40.718+0000] {sql.py:373} INFO - Rows affected: 500000
+[2023-01-18T08:47:46.309+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=our_dag_with_python_operator_v01, task_id=pull_data, execution_date=20230118T084638, start_date=20230118T084740, end_date=20230118T084746
+[2023-01-18T08:47:46.406+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2023-01-18T08:47:46.422+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check
